@@ -6,7 +6,9 @@ in order to get a palindromic number, given the constraints on this number of it
 ∼ ./palindrome -h
 USAGE
 ./palindrome -n number -p palindrome [-b base] [-imin i] [-imax i]
+
 DESCRIPTION
+
 -n n integer to be transformed (>=0)
 -p pal palindromic number to be obtained (incompatible with the -n
 option) (>=0)
