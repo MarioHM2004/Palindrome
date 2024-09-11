@@ -1,22 +1,58 @@
-# Palindrome
+# Palindrome Finder
 
-This project finds such iterated reversal palindromes, and the smallest number of iterations,
-in order to get a palindromic number, given the constraints on this number of iterations.
+This tool finds iterated reversal palindromes and determines the smallest number of iterations needed to achieve a palindromic number, given specific constraints.
 
-USAGE --> ./palindrome -h
+## Usage
 
-./palindrome -n number -p palindrome [-b base] [-imin i] [-imax i]
+```bash
+./palindrome -h
+```
 
-DESCRIPTION
+## Options
 
--n n integer to be transformed (>=0)
+- `-n number`
+  - **Description**: Integer to be transformed (must be >=0).
+  - **Usage**: Finds how many iterations are needed to turn this number into a palindrome.
+  
+- `-p palindrome`
+  - **Description**: Target palindromic number to achieve (must be >=0).
+  - **Usage**: Finds all integers `n` that will turn into this palindrome within the given constraints.
+  - **Note**: This option is incompatible with the `-n` option.
 
--p pal palindromic number to be obtained (incompatible with the -n option) (>=0)
+- `-b base`
+  - **Description**: Base in which the procedure will be executed (1 < base <= 10).
+  - **Default**: Base 10.
+  
+- `-imin i`
+  - **Description**: Minimum number of iterations, inclusive (must be >=0).
+  - **Default**: 0.
 
-if defined, all fitting values of n will be output
+- `-imax i`
+  - **Description**: Maximum number of iterations, inclusive (must be >=0).
+  - **Default**: No upper limit.
 
--b base base in which the procedure will be executed (1<b<=10)
+## Examples
 
--imin i minimum number of iterations, included (>=0)
+1. **Find iterations for a number to become a palindrome**:
+   ```bash
+   ./palindrome -n 123
 
--imax i maximum number of iterations, included (>=0)
+2. **Find numbers that become a specific palindrome**:
+   ```bash
+   ./palindrome -p 121
+   ```
+
+3. **Execute in a different base and set iteration constraints**:
+   ```bash
+   ./palindrome -n 123 -b 2 -imin 1 -imax 10
+   ```
+
+## Help
+
+For a list of all commands and usage instructions, run:
+
+```bash
+./palindrome -h
+```
+
+Happy palindrome finding! 🚀
